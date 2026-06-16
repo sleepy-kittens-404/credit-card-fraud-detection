@@ -218,4 +218,10 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 .vscode
+
 notebooks/data/ 
+
+notebooks/Models/ 
+notebooks/catboost_info/
+*.pkl
+
