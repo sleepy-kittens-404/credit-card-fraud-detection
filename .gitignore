@@ -224,4 +224,4 @@ notebooks/data/
 notebooks/Models/ 
 notebooks/catboost_info/
 *.pkl
-
+artifacts/
