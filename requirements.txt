@@ -6,4 +6,5 @@ xgboost
 seaborn
 imblearn
 catboost
+dill
 #-e .
