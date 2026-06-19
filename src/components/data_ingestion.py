@@ -24,6 +24,7 @@ class DataIngestion:
             df = pd.read_csv(
                 "notebooks/data/creditcard.csv"
             )
+            df= df.drop_duplicates()
 
             logging.info('Read the dataset as dataframe')
 
