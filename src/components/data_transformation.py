@@ -25,7 +25,7 @@ class DataTransformation:
         try:
            
             preprocessor = ColumnTransformer(transformers=[("Robust Scaler",RobustScaler(),["Amount"]),
-            ("Standard Scaler",StandardScaler(),["Time"])])
+            ("Standard Scaler",StandardScaler(),["Time"])],remainder='passthrough')
             logging.info("Scaling of 'Amount' and 'Time' completed")
             return preprocessor
         except Exception as e:

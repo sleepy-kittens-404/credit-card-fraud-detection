@@ -225,3 +225,4 @@ notebooks/Models/
 notebooks/catboost_info/
 *.pkl
 artifacts/
+catboost_info/
