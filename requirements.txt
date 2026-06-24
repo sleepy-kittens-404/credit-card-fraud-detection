@@ -7,4 +7,5 @@ seaborn
 imblearn
 catboost
 dill
+flask
 #-e .

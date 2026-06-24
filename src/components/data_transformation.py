@@ -11,6 +11,7 @@ from src.exception import CustomException
 from src.logger import logging
 from src.utils import save_object
 from sklearn.base import BaseEstimator, TransformerMixin
+from imblearn.over_sampling import SMOTE
 
 
 
@@ -50,7 +51,7 @@ class DataTransformation:
 
             input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
-
+            input_feature_train_arr,target_feature_train_df =SMOTE(random_state=32).fit_resample(input_feature_train_arr,target_feature_train_df)
             train_arr = np.c_[input_feature_train_arr,np.array(target_feature_train_df)]
             test_arr = np.c_[input_feature_test_arr,np.array(target_feature_test_df)]
             logging.info("Saved Preprocessing Object")

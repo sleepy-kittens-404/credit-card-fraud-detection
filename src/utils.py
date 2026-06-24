@@ -36,7 +36,7 @@ def evaluate_model(x_tr, y_tr, x_tst, y_tst, models, params):
                 param_grid=params[model_name],
                 cv=cv,
                 scoring="f1",
-                n_jobs=-1,
+                n_jobs=10,
                 verbose=1
             )
 
@@ -63,3 +63,9 @@ def evaluate_model(x_tr, y_tr, x_tst, y_tst, models, params):
         raise e
 
 
+def load_object(file_path):
+    try:
+        with open(file_path, 'rb') as file_obj:
+            return dill.load(file_obj)
+    except Exception as e:
+        raise CustomException(e, sys)
