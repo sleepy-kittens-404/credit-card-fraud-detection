@@ -42,9 +42,53 @@ class ModelTrainer:
                 "XGBoost": XGBClassifier(random_state=42, eval_metric="logloss", n_jobs=-1),
                 "CatBoost": CatBoostClassifier(verbose=0, random_state=42)
             }
-            
+            params = {
+
+                "Logistic Regression": {
+                "C": [0.01, 0.1, 1, 10, 100],
+                "solver": ["liblinear", "lbfgs"]
+                },
+
+                "Naive Bayes": {
+                "var_smoothing": [1e-12, 1e-10, 1e-9, 1e-8, 1e-7]
+                },
+
+                "Decision Tree": {
+                "criterion": ["gini", "entropy", "log_loss"],
+                "max_depth": [None,3, 5, 10, 20]
+                },
+
+                "Random Forest": {
+                "n_estimators": [100,200,300],
+                "max_depth":[5,10,20,None]
+                },
+
+                "Gradient Boosting": {
+                "learning_rate": [0.1, 0.01, 0.001],
+                "n_estimators": [50, 100]
+                },
+
+                "XGBoost": {
+                "learning_rate": [0.1, 0.01,0.05, 0.001],
+                "n_estimators": [100,200,300],
+                "max_depth":[3,5,7]
+                },
+                "CatBoost": {
+                    "depth": [4, 6,8],
+                    "learning_rate": [0.01,0.05, 0.1],
+                    "iterations": [200,300,500]
+                },
+
+                "AdaBoost": {
+                "learning_rate": [0.1, 0.01, 0.001],
+                "n_estimators": [50, 100]
+                },
+                
+
+                }
+
             logging.info("Evaluating models...")
-            model_report = evaluate_model(X_train, y_train, X_test, y_test, models=models)
+            model_report = evaluate_model(X_train, y_train, X_test, y_test, models=models,params = params)
             logging.info("Model training completed successfully")
 
             # Extract the best performing model score and name
