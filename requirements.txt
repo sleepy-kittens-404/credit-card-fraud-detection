@@ -5,7 +5,7 @@ scikit-learn
 xgboost
 seaborn
 imblearn
-catboost
+catboost==1.2.3
 dill
 flask
 #-e .

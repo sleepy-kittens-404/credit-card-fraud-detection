@@ -8,7 +8,7 @@ from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 application = Flask(__name__)
 app = application
 
-TEST_DATA_PATH = os.path.join('artifacts', 'test.csv')
+TEST_DATA_PATH = os.path.join('artifacts', 'test_small.csv')
 
 @app.route('/')
 def index():
