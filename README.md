@@ -105,7 +105,12 @@ credit-card-fraud-detection/
 ├── requirements.txt
 └── setup.py
 ```
+## Deployment
 
+- Containerized using Docker
+- Published to Docker Hub
+- Automated deployment using AWS CodePipeline
+- Hosted on AWS Elastic Beanstalk
 ---
 
 ## 🚀 Run Locally
